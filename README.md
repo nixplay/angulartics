@@ -116,6 +116,19 @@ Setup listeners in Google Tag Manager
                 - Document Path: {{angulartics page path}}
         - Firing Rules: Angulartics pageviews
 
+## for New Relic ##
+
+    angular.module('myApp', ['angulartics', 'angulartics.new-relic'])
+
+Add the correct NREUM.info line to the bottom of the New Relic Javascript snippet:
+
+      ...
+      function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:23,ee:"QJf3ax"}]},{},["G9z0Bl",4,11,5]);
+      ;NREUM.info={beacon:"x",errorBeacon:"x",licenseKey:"x",applicationID:"x",sa:0,agent:"x"} // <-- MODIFY THIS LINE!
+    </script>
+    
+Done. Open your app, browse across the different routes and check [the New Relic dashboard](https://rpm.newrelic.com) to see the hits. 
+
 ## for other providers
 
 [Browse the website for detailed instructions.](http://luisfarzati.github.io/angulartics)
@@ -135,6 +148,7 @@ Setup listeners in Google Tag Manager
 * Loggly
 * Marketo
 * Mixpanel
+* New Relic
 * Piwik
 * Scroll tracking
 * Segment.io
