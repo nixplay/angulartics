@@ -13,6 +13,7 @@
     "src/angulartics-gtm.js",
     "src/angulartics-kissmetrics.js",
     "src/angulartics-mixpanel.js",
+    "src/angulartics-new-relic.js",
     "src/angulartics-piwik.js",
     "src/angulartics-scroll.js",
     "src/angulartics-segmentio.js",
