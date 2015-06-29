@@ -23,7 +23,7 @@ angular.module('angulartics.new-relic', ['angulartics'])
     $analyticsProvider.registerEventTrack(function (action, properties) {
       if (window.newrelic) {
         var nr = window.newrelic;
-        nr.addPageAction(properties.eventType, properties);
+        nr.addPageAction(action, properties);
       }
     });
 
