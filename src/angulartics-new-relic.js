@@ -16,7 +16,10 @@ angular.module('angulartics.new-relic', ['angulartics'])
     $analyticsProvider.registerPageTrack(function (path) {
       if (window.newrelic) {
         var nr = window.newrelic;
-        nr.addPageAction(angularticsNewRelicPageAction.PAGE_VIEW);
+        nr.addPageAction(angularticsNewRelicPageAction.PAGE_VIEW, {
+          currentPath: window.location.hash.substring(1),
+          destinationPath: path
+        });
       }
     });
 
