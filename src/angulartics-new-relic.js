@@ -31,7 +31,10 @@ angular.module('angulartics.new-relic', ['angulartics'])
     });
 
     $analyticsProvider.registerSetUsername(function (userId) {
-      nr.setCustomAttribute('username', userId);
+      if (window.newrelic) {
+        var nr = window.newrelic;
+        nr.setCustomAttribute('username', userId);
+      }
     });
 
   }
