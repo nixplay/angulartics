@@ -30,6 +30,10 @@ angular.module('angulartics.new-relic', ['angulartics'])
       }
     });
 
+    $analyticsProvider.registerSetUsername(function (userId) {
+      nr.setCustomAttribute('username', userId);
+    });
+
   }
 ]);
 
